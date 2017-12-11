@@ -42,7 +42,7 @@ xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       var result = JSON.parse(xhttp.responseText);
       coverImage.style.backgroundImage = 'url('+ result.data[0].attributes.coverImage.original + ')';
-      posterImage.innerHTML = '<img src="'+result.data[0].attributes.posterImage.large +'" />';
+      posterImage.innerHTML = '<img src="'+result.data[0].attributes.posterImage.large +'" alt="Poster image of the anime or manga" />';
       title.innerHTML = result.data[0].attributes.titles.en + " / " + result.data[0].attributes.titles.en_jp;
       synopsis.innerHTML = result.data[0].attributes.synopsis;
       year.innerHTML = result.data[0].attributes.startDate;
