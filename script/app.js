@@ -68,11 +68,10 @@ function DarkMode() {
       if (checkbox.checked) {
         document.body.style.backgroundColor = "#282828";
         mainpage.style.color  = "rgba(255, 255, 255, 0.882)"; 
-        form.style.color  = "rgba(255, 255, 255, 0.882)";
       } else {
         document.body.style.backgroundColor = "rgba(255, 255, 255, 0.882)"; 
         mainpage.style.color = "#282828";
-        form.style.color  = "#282828";
+
         }
     });
 }
@@ -95,9 +94,25 @@ function MangaorAnimePicker() {
       }
     });
 }
+function buttonContact() {
+   var button = document.querySelector('.button');
+   var form = document.querySelector('.form');
+    button.addEventListener('click', function (event) {    
+    form.style.visibility='visible';
+    });
+}
+function buttonCancle() {
+   var button = document.querySelector('.cancel');
+   var form = document.querySelector('.form');
+    button.addEventListener('click', function (event) {    
+    form.style.visibility='hidden';
+    });
+}
 
 document.addEventListener('DOMContentLoaded', function() {
   GetAnime("Fairy tail");
+   var form = document.querySelector('.form');
+   form.style.visibility='hidden';
     var locationInput = document.querySelector('#animeOrManga');
 
      if (locationInput) {
@@ -107,4 +122,6 @@ document.addEventListener('DOMContentLoaded', function() {
      }
      DarkMode();
      MangaorAnimePicker();
+     buttonContact();
+     buttonCancle();
 });
